@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Balance {% endblock %}
+
+{% block content %}
+<ul>
+    <li style="float:left;"><a href="./">Inicio</a></li>
+    <li style="float:left;"><a href="./compra">Compra</a></li>
+    <li style="float:left;"><a>Status</a></li>
+</ul>
+<br>
+<h2>ESTADO DE LA INVERSIÓN</h2>
+    <br>
+    {% with messages =  get_flashed_messages() %}
+        {% if messages %}
+            <div class=error>
+            {% for message in messages %}
+            <li class= error>{{ message }}</li>
+            {% endfor %}
+            </div>
+        {% endif %}
+        {% endwith %}
+    {% if saldos != None %}
+        <table>
+            <thead>
+            <tr>
+            <td>
+                Cantidad invertida (€)
+            </td> 
+            <td>{{ cantidadinvertida }}</td>
+            </tr>
+            <tr>
+            <td>
+                Precio Actual (€)
+            </td>  
+            <td>{{ precioactual }}</td>
+            </tr>
+            </thead>
+        </table>
+        <div style="color:rgba(5, 37, 126, 0.774)">Estado actual de tu inversión: {{ "%.2f"|format(saldos) }}</div>
+    {% endif %}
+{%endblock%}

@@ -1,0 +1,50 @@
+{%extends 'base.html'%}
+
+{%block title%} Inicio | Movimientos {%endblock%}
+
+{%block content%}
+    <ul>
+        <li><a>Inicio </a></li>
+        <li><a href="./compra">Compra</a></li>
+        <li><a href="./status">Status</a></li>
+    </ul>
+    <br>
+    <h2>MOVIMIENTOS</h2>
+<div>
+    {% with messages =  get_flashed_messages() %}
+    <div>
+    {% for message in messages %}
+    <li class= error>{{ message }}</li>
+    {% endfor %}
+    </div>
+    {% endwith %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>From</th>
+                    <th>Cantidad</th>
+                    <th>To</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                </tr>
+            </thead>
+            {% for movimiento in movimientos %}
+            <tr>
+                <td>{{ movimiento.date }}</td>
+                <td>{{ movimiento.time}}</td>
+                <td>{{ movimiento.moneda_from}}</td>
+                <td>{{ movimiento.cantidad_from }}</td>
+                <td>{{ movimiento.moneda_to }}</td>
+                <td>{{ movimiento.cantidad_to }}</td>
+                <td>{{ movimiento.preciounitario }} {{ movimiento.moneda_from }}</td>
+            </tr>     
+            {% endfor %}
+        </table>
+        {% if movimientos|length == 0 %}
+        <p>SIN MOVIMIENTOS</p>
+        {% endif %}  
+</div>
+    <br>
+{%endblock%}

@@ -1,0 +1,120 @@
+@import 'https://fonts.googleapis.com/css?family=VT323';
+@import 'https://fonts.googleapis.com/css?family=Ubuntu:400';
+
+#header {
+    color: #f4f4f8;  
+    height: 90px;
+    display: flex;
+    text-align: right;
+    align-items: center;
+}
+
+body {
+    background: rgb(175, 180, 176);
+    color: #041e46;
+    text-decoration: none;
+    font-family: 'Ubuntu';
+}
+
+main {
+    background: linear-gradient(to bottom, #d0d2da 0%, #d0d2da 100%);
+    text-align: center;
+    overflow: auto; 
+    padding: 0vh 0 30vh;
+}
+
+table {
+    max-width: 1200px;
+    margin: 10px auto;
+}
+
+thead th {
+    font-size: medium;
+    background: #695CFF;
+    color: #FFF;
+}
+
+tr {
+    background: #f2f6f7;
+}
+
+th, td {
+    padding: 30px;
+    text-align: center;
+}
+
+footer {
+    color: #FFF;
+    background: #695CFF;
+    padding: 5vh 0;
+    text-align: left;
+    font-family: "Ubuntu";
+    font-size: "medium" 
+
+}
+
+#submit1, #submit2  {
+	border:1px solid #695CFF;
+    text-align:center;
+    color:#ffffff;
+    background:linear-gradient(to bottom, #7C70FF 5%, #695CFF 100%);
+	padding:6px 30px;
+	background-color:#695CFF;
+	box-shadow:inset 0px 1px 0px 0px #695CFF;
+    line-height: 15px;
+	font-family:"Ubuntu";
+	font-size:13px;
+}
+
+#c1, #c2, #desde_moneda, #para_moneda{
+    padding: 5px 60px;
+    width: 290px;
+    height: 30px;
+    font-family: "Ubuntu"
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #695CFF;
+    height: 50px;
+}
+
+li{
+    float: left;
+}
+
+a:hover {  
+    color: rgb(245, 237, 237);
+    background-color: rgb(156, 155, 248);  
+}
+
+li a {
+    float: left;
+    display: grid;
+    color: rgb(245, 237, 237);
+    text-align: center;
+    padding: 8px 16px;
+    font-weight: 200;
+    font-family: "VT323";
+    font-size: x-large;
+}
+
+h2 {
+    font-weight: 500;
+    font-family: 'VT323';
+}
+
+ul.error, li.error {
+    font-family: 'Ubuntu';
+    color: #df1a24;
+    padding: 5px 10px 5px 10px;
+    float: none;
+}
+
+
+
+
+

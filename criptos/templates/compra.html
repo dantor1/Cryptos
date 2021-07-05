@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+
+{%block title%} COMPRA DE CRIPTOS {%endblock%}
+
+{%block content%}
+<ul>
+    <li style="float:left;"><a href="./">Inicio</a></li>
+    <li style="float:left;"><a>Compra</a></li>
+    <li style="float:left;"><a href="./status">Status</a></li>
+</ul>
+<br>
+<h2>COMPRA DE CRIPTOS</h2>
+<form action="compra", method="post">
+    {{ form.hidden_tag() }}
+    {% with messages=get_flashed_messages() %}
+    {% for message in messages %}
+    <li class= error>{{ message }}</li>
+    {% endfor %}
+    {% endwith %}
+    <table>
+        <tr>
+            <td>
+                {{ form.desde_moneda.label }}
+                {{ form.desde_moneda }}
+            </td>
+            <td>
+                {{ form.para_moneda.label }}  
+                {{ form.para_moneda }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form.c1.label }}
+                {{ form.c1 }}
+            </td>
+            <td>
+                {{ form.c2.label }}
+                {{ form.c2 (value=cantidadconvertida) }}
+            </td>
+        <tr>
+            <td>
+                {{ form.submit2 }}
+            </td>
+            <td>
+                {{ form.submit1() }}
+            </td>
+        </tr>
+        <td colspan="2">
+            Precio Unitario: 
+            {{ preciounitario }} {{ form.desde_moneda.data }}  
+        </td>
+    </table>
+</form> 
+{%endblock%}
