@@ -35,7 +35,7 @@ def validaciones_criptos():
 @app.route('/')
 def index():
     try:
-        movimientos = consultaSQL("SELECT * FROM movimiento ORDER BY date;")
+        movimientos = consultaSQL("SELECT * FROM movimientos ORDER BY date;")
         return render_template("inicio.html", movimientos=movimientos)
     except:
         flash("Error en base de datos. Inténtelo de nuevo", "error")
