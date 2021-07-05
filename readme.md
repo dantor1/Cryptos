@@ -39,7 +39,7 @@ ___
 
 ```venv\Scripts\activate```
 
-* **Creación del entorno virtual en Mac y Linux del mismo (opcional)**
+* **Creación del entorno virtual en Mac y Linux y activación del mismo (opcional)**
 
 ```python3 -m venv venv```
 

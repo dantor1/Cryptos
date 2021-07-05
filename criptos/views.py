@@ -34,8 +34,12 @@ def validaciones_criptos():
 
 @app.route('/')
 def index():
-    movimientos = consultaSQL("SELECT * FROM movimientos ORDER BY date;")
-    return render_template("inicio.html", movimientos=movimientos)
+    try:
+        movimientos = consultaSQL("SELECT * FROM movimiento ORDER BY date;")
+        return render_template("inicio.html", movimientos=movimientos)
+    except:
+        flash("Error en base de datos. Inténtelo de nuevo", "error")
+        return render_template("inicio.html")
 
 
 @app.route('/compra', methods=["GET", "POST"])
@@ -140,7 +144,6 @@ def status():
         resultado = requests.get(url_api.format(valor, item, 'EUR', API_KEY))
         if resultado.status_code == 200:
             dict_precios = resultado.json()
-            print(dict_precios)
             # Procesamos los datos necesarios del diccionario de diccionarios que devuelve el json hasta llegar al valor actual de la cripto
             cotizacionactual = dict_precios['data']['quote']['EUR']['price']
             inv_atrapada+=cotizacionactual
